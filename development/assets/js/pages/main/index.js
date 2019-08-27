@@ -1,3 +1,5 @@
+
+
 import $ from 'jQuery';
 
 $(function () {
@@ -21,3 +23,4 @@ $(function () {
 
 });
 
+import '../../../scss/main/styles.scss';

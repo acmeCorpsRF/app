@@ -4,13 +4,17 @@ const path = require('path');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+    context: path.resolve(__dirname, '/development/assets/'),
     mode: NODE_ENV,
-    entry: './development/assets/js/index.js',
+    entry: {
+        main: '/js/pages/main/index.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'public/js'),
-        filename: 'index.js',
+        path: path.resolve(__dirname, 'public'),
+        filename: 'js/[name].js',
         publicPath: 'public/js'
     },
     watch: NODE_ENV === 'development',
@@ -30,11 +34,24 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+
+                    ]
+                })
             }
         ]
     },
@@ -56,6 +73,9 @@ module.exports = {
                 },
                 mangle: true,
             }
+        }),
+        new ExtractTextPlugin({
+            filename:  'css/styles.css'
         })
     ]
 

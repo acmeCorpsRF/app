@@ -1,0 +1,115 @@
+.thanks-page {
+
+  &__block {
+    background-image: url("#{$path}/img/pages/thanks_page/thanks_page_bg.png");
+    background-repeat: no-repeat;
+
+    @media all and (min-width: 1169px) {
+      background-position-x: -9px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      background-position-x: -576px;
+    }
+
+    @media all and (max-width: 767px) {
+      background-position-x: -800px;
+    }
+
+  }
+
+  &__content {
+    text-align: center;
+
+    @media all and (min-width: 1169px) {
+      padding-top: 338px;
+      padding-bottom: 339px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-bottom: -56px;
+      padding-top: 202px;
+      padding-bottom: 475px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: -500px;
+      padding-top: 98px;
+      padding-bottom: 598px;
+    }
+
+  }
+
+  &__image {
+    max-width: 151px;
+
+    @media all and (min-width: 768px) {
+      margin-right: auto;
+      margin-bottom: 57px;
+      margin-left: auto;
+    }
+
+    @media all and (max-width: 1139px) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media all and (max-width: 767px) {
+      max-width: 95px;
+      margin-bottom: 33px;
+    }
+
+  }
+
+  &__title {
+    width: 100%;
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 18px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 17px;
+    }
+
+  }
+
+  &__text {
+    display: block;
+    color: #ffffff;
+    @extend %p;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 91px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 31px;
+    }
+
+    a {
+      color: $commonColor;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+  &__link {
+    display: inline-block;
+    width: 277px;
+    text-decoration: none;
+    @extend %button-default;
+    @extend %btn-type-submit;
+
+    &::after {
+      right: 25px;
+    }
+
+  }
+
+}
