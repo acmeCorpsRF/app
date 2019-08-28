@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  background-color: #212326;
+  background-color: white;
 }
 
 [class*="__content"]:not([class="popup__content"]) {
@@ -37,42 +37,6 @@ body {
     max-width: 320px;
     padding-right: 10px;
     padding-left: 10px;
-  }
-
-}
-
-main [class*="__content"]:not([class*="thanks-page"]),
-footer [class*="__content"] {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    border-left: 1px solid #3a3e43;
-
-    @media all and (min-width: 1454px) {
-      left: 28px;
-    }
-
-    @media all and (max-width: 1453px) and (min-width: 1169px) {
-      left: 169px;
-    }
-
-    @media all and (max-width: 1168px) and (min-width: 1053px) {
-      left: 14px;
-    }
-
-    @media all and (max-width: 1052px) and (min-width: 768px) {
-      left: 141px;
-    }
-
-    @media all and (max-width: 767px) {
-      left: 14px;
-    }
-
   }
 
 }

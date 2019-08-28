@@ -1,21 +1,22 @@
 'use strict';
 
 const path = require('path');
-const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
+const NODE_ENV = process.env.NODE_ENV || 'development';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
-    context: path.resolve(__dirname, '/development/assets/'),
+    context: path.resolve(__dirname, './development/assets/js/pages/'),
     mode: NODE_ENV,
     entry: {
-        main: '/js/pages/main/index.js'
+        main: './main/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'js/[name].js',
-        publicPath: 'public/js'
+        filename: 'js/[name].[chunkhash].js',
+        publicPath: 'public'
     },
     watch: NODE_ENV === 'development',
     // devtool: NODE_ENV == 'development' ? 'cheap-module-source-map' : false,
@@ -26,7 +27,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js$/i,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -34,24 +35,36 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: true
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            sourceMap: NODE_ENV == 'development' ? true : false
+                        }
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: NODE_ENV == 'development' ? true : false
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: NODE_ENV == 'development' ? true : false,
+                            config: {
+                                path: 'development/assets/js/postcss.config.js'
                             }
                         }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: NODE_ENV == 'development' ? true : false
+                        }
+                    }
 
-                    ]
-                })
+                ]
             }
         ]
     },
@@ -74,9 +87,10 @@ module.exports = {
                 mangle: true,
             }
         }),
-        new ExtractTextPlugin({
-            filename:  'css/styles.css'
-        })
+        new MiniCssExtractPlugin({
+            filename: 'css/styles.[contenthash].css',
+        }),
+        new ProgressBarPlugin()
     ]
 
 };
