@@ -5,11 +5,10 @@ import $ from 'jQuery';
 $(function () {
     let sum = (...args) => args.reduce((m, n) => m + n, 0);
     $('body').append('<div>');
-    $('div').text(sum());
-    console.log(process.env.NODE_ENV) + '\n';
+    console.log("Страница обновилась! - " + process.env.NODE_ENV);
 
     setTimeout(() => {
-        new Error("Страница обновилась!");
-    }, 2000);
+        $('div').text("Страница обновилась! - " + process.env.NODE_ENV);
+    }, 3000);
 
 });

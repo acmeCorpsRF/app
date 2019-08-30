@@ -8,23 +8,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const PATH = {
-    absolute: path.resolve(__dirname, ''),
-    pages: path.resolve(__dirname, './development/pages'),
-    assets: path.resolve(__dirname, './development/assets'),
-    public: path.resolve(__dirname, './public')
+    pages: path.resolve(__dirname, 'development/pages'),
+    entries: path.resolve(__dirname, 'development/assets/js/pages'),
+    public: path.resolve(__dirname, 'www/public')
 }
 
 module.exports = {
-    context: path.resolve(__dirname, ''),
+    context: path.resolve(__dirname, 'development'),
     mode: NODE_ENV,
     entry: {
-        main: `${PATH.assets}/js/pages/main/index.js`
+        main: `${PATH.entries}/main/index.js`
     },
     output: {
-        path: `${PATH.public}`,
-        // filename: 'js/[name].[chunkhash].js',
-        filename: 'js/[name].js',
-        publicPath: 'public'
+        path: path.resolve(__dirname, 'www'),
+        // filename: 'public/js/[name].[chunkhash].js',
+        filename: 'public/js/[name].js',
     },
     watch: NODE_ENV === 'development',
     devtool: NODE_ENV == 'development' ? 'cheap-module-source-map' : false,
@@ -32,7 +30,7 @@ module.exports = {
     // devtool: NODE_ENV == 'development' ? 'cheap-module-inline-source-map' : false,
     devServer: {
         overlay: true,
-        contentBase: `${PATH.absolute}`
+        contentBase: path.resolve(__dirname, 'www')
     },
     module: {
         rules: [
@@ -49,19 +47,19 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            // sourceMap: NODE_ENV == 'development' ? true : false
+                            sourceMap: NODE_ENV == 'development' ? true : false
                         }
                     },
                     {
                         loader: 'css-loader',
                         options: {
-                            // sourceMap: NODE_ENV == 'development' ? true : false
+                            sourceMap: NODE_ENV == 'development' ? true : false
                         }
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            // sourceMap: NODE_ENV == 'development' ? true : false,
+                            sourceMap: NODE_ENV == 'development' ? true : false,
                             config: {
                                 path: 'development/assets/js/postcss.config.js'
                             }
@@ -70,7 +68,7 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            // sourceMap: NODE_ENV == 'development' ? true : false
+                            sourceMap: NODE_ENV == 'development' ? true : false
                         }
                     }
 
@@ -98,17 +96,17 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            // filename: 'css/styles.[contenthash].css',
-            filename: 'css/styles.css',
+            // filename: 'public/css/styles.[contenthash].css',
+            filename: 'public/css/styles.css',
         }),
         new HtmlWebpackPlugin({
             hash: false,
-            template: `${PATH.pages}/index.html`,
+            template: 'pages/index.html',
             title: 'app',
-            filename: `${PATH.absolute}/index.html`
+            filename: 'index.html'
         }),
         new webpack.SourceMapDevToolPlugin({
-            filename: NODE_ENV == 'development' ? 'js/[name].js.map' : false
+            filename: NODE_ENV == 'development' ? 'public/js/[name].js.map' : false
         }),
         new ProgressBarPlugin()
     ]
