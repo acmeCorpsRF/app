@@ -1,0 +1,86 @@
+.connection {
+
+  &__content {
+    padding-top: 61px;
+    padding-bottom: 77px;
+  }
+
+  &__firm {
+    text-align: center;
+
+    &-title {
+      font: {
+        size: 30px;
+      }
+      line-height: 36px;
+
+      @media all and (min-width: 768px) {
+        margin-bottom: 57px;
+      }
+
+      @media all and (max-width: 767px) {
+        margin-bottom: 57px;
+        letter-spacing: -1.1px;
+      }
+
+    }
+
+    &-address {
+      position: relative;
+      padding-top: 24px;
+      padding-bottom: 42px;
+      border-top: 1px solid #f2e0be;
+      @extend %p;
+
+      &::before {
+        content: url('#{$path}/img/icons/pages/contacts/placeholder.png');
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        width: 56px;
+        background-color: #ffffff;
+        transform: translateX(-50%);
+      }
+
+      span {
+
+        @media all and (max-width: 767px) {
+          display: none;
+        }
+
+      }
+
+    }
+
+    &-tel {
+      position: relative;
+      padding-top: 24px;
+      padding-bottom: 42px;
+      border-top: 1px solid #f2e0be;
+
+      &::before {
+        content: url('#{$path}/img/icons/pages/contacts/call.png');
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        width: 56px;
+        background-color: #ffffff;
+        transform: translateX(-50%);
+      }
+
+      &-link {
+        color: #000000;
+        text-decoration: none;
+        @extend %p;
+
+        &:hover {
+          color: $commonColor;
+        }
+
+      }
+
+    }
+
+  }
+
+}

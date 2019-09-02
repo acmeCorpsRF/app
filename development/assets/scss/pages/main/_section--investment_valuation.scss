@@ -1,0 +1,232 @@
+.investment-valuation {
+
+  &__block {
+    background-repeat: no-repeat;
+
+    @media all and (min-width: 768px) {
+      background-image: url("#{$path}/img/pages/main/2_102.png");
+    }
+
+    @media all and (min-width: 1169px) {
+      background-position: -9px -59px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      background-position: -248px -57px;
+    }
+
+    @media all and (max-width: 767px) {
+      background-image: url("#{$path}/img/pages/main/2_102_320.png");
+      background-position: -390px -63px;
+    }
+
+  }
+
+  &__content {
+
+    @media all and (min-width: 1169px) {
+      margin-top: -62px;
+      margin-bottom: -287px;
+      padding-top: 231px;
+    }
+
+    @media all and (min-width: 1454px) {
+      padding-bottom: 565px;
+    }
+
+    @media all and (max-width: 1453px) and (min-width: 1169px) {
+      padding-bottom: 415px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-top: -212px;
+      margin-bottom: -61px;
+      padding-top: 283px;
+      padding-bottom: 140px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-top: -200px;
+      padding-top: 242px;
+      padding-bottom: 82px;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    color: #ffffff;
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 21px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -37px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__text {
+    display: block;
+    font: {
+      size: 24px;
+      family: $robotoRegular;
+    }
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      line-height: 36px;
+    }
+
+    @media all and (min-width: 1169px) {
+      max-width: 372px;
+      margin-bottom: 29px;
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-bottom: 31px;
+      margin-left: 36px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 23px;
+      margin-left: 23px;
+      line-height: 30px;
+    }
+
+  }
+
+  &__button {
+    @extend %button-default;
+    @extend %btn-type-submit;
+
+    @media all and (min-width: 768px) {
+      width: 302px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1453px) and (min-width: 768px) {
+      margin-bottom: 32px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 37px;
+    }
+
+    @media all and (max-width: 767px) {
+      width: 262px;
+      margin-bottom: 44px;
+      margin-left: 23px;
+      text-indent: -18px;
+    }
+
+    &::after {
+
+      @media all and (min-width: 768px) {
+        right: 36px;
+      }
+
+      @media all and (max-width: 767px) {
+        right: 9px;
+      }
+
+    }
+
+  }
+
+  &__information {
+    background-color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      max-width: 602px;
+    }
+
+    @media all and (min-width: 1454px) {
+      float: right;
+      margin-top: -175px;
+      margin-right: 15px;
+    }
+
+    @media all and (max-width: 1453px) and (min-width: 1169px) {
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 37px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-right: -10px;
+      margin-left: 23px;
+    }
+
+    &-item {
+      background-repeat: no-repeat;
+      @extend %p;
+
+      &:first-child {
+        border-bottom: 2px solid #d4d4d5;
+      }
+
+      @media all and (min-width: 768px) {
+
+        &:first-child {
+          padding: 42px 208px 29px 43px;
+          background-position: 442px 32px;
+        }
+
+        &:last-child {
+          padding: 28px 33px 33px 184px;
+          background-position: 33px 33px;
+        }
+
+      }
+
+      @media all and (max-width: 767px) {
+
+        &:first-child {
+          padding: 170px 33px 29px 21px;
+          background-position: 21px 23px;
+        }
+
+        &:last-child {
+          padding: 181px 37px 25px 22px;
+          background-position: 22px 33px;
+        }
+
+      }
+
+      &.ballot {
+        background-image: url("#{$path}/img/icons/pages/main/ballot.png");
+      }
+
+      &.help {
+        background-image: url("#{$path}/img/icons/pages/main/help.png");
+      }
+
+    }
+
+  }
+
+}

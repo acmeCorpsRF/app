@@ -1,0 +1,202 @@
+.your-investment {
+
+  &__block {
+    background-repeat: no-repeat;
+
+    @media all and (min-width: 768px) {
+      background-image: url("#{$path}/img/pages/main/analyzing_data.png");
+    }
+
+    @media all and (min-width: 1169px) {
+      background-position-x: 612px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      background-position-x: 18px;
+    }
+
+    @media all and (max-width: 767px) {
+      background-image: url("#{$path}/img/pages/main/analyzing_data_320.png");
+      background-position: -126px -77px;
+    }
+
+  }
+
+  &__content {
+
+    @media all and (min-width: 768px) {
+      padding-top: 173px;
+    }
+
+    @media all and (min-width: 1169px) {
+      padding-bottom: 200px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      padding-bottom: 296px;
+    }
+
+    @media all and (max-width: 767px) {
+      padding-top: 47px;
+      padding-bottom: 59px;
+    }
+
+  }
+
+  &__title {
+
+    @media all and (min-width: 1169px) {
+      max-width: 660px;
+      margin-bottom: 57px;
+      margin-left: 69px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 660px;
+      margin-bottom: 42px;
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 62px;
+      margin-left: 21px;
+      font: {
+        size: 46px;
+      }
+      line-height: 46px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -43px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__presentation {
+    background-color: rgba($commonColor, 0.2);
+    box-shadow: 0 7px 26px 12px rgba(33, 35, 38, 0.05);
+
+    @media all and (min-width: 1169px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 36px;
+      margin-left: 69px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 406px;
+      margin-bottom: 59px;
+      margin-left: 40px;
+      padding-bottom: 32px;
+    }
+
+    @media all and (max-width: 767px) {
+      position: relative;
+      margin-right: -10px;
+      margin-bottom: 48px;
+      margin-left: -10px;
+      padding-bottom: 31px;
+    }
+
+    &-item {
+      color: #ffffff;
+      background-repeat: no-repeat;
+      @extend %p;
+
+      @media all and (min-width: 1169px) {
+        width: 33.33%;
+        min-height: 84px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+
+        &:first-child {
+          padding-left: 99px;
+          background-position: 30px 19px;
+        }
+
+        &:nth-child(2) {
+          padding-left: 83px;
+          background-position: 16px 19px;
+        }
+
+        &:last-child {
+          padding-left: 122px;
+          background-position: 53px 22px;
+        }
+
+      }
+
+      @media all and (max-width: 1168px) and (min-width: 768px) {
+        padding-top: 33px;
+        padding-bottom: 4px;
+        padding-left: 99px;
+        background-position: 30px 34px;
+
+        &:last-child {
+          padding-right: 100px;
+        }
+
+      }
+
+      @media all and (max-width: 767px) {
+        padding: 35px 30px 4px 101px;
+        background-position-x: 33px;
+
+        &:first-child {
+          background-position-y: 36px;
+        }
+
+        &:nth-child(2) {
+          background-position-y: 35px;
+        }
+
+        &:last-child {
+          background-position-y: 38px;
+        }
+
+      }
+
+      &.analysis {
+        background-image: url("#{$path}/img/icons/pages/main/analysis.png");
+      }
+
+      &.customer-service {
+        background-image: url("#{$path}/img/icons/pages/main/customer_service.png");
+      }
+
+      &.presentation {
+        background-image: url("#{$path}/img/icons/pages/main/presentation.png");
+      }
+
+    }
+
+  }
+
+  &__text {
+    color: #ffffff;
+
+    @media all and (min-width: 1169px) {
+      max-width: 950px;
+      margin-left: 69px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 630px;
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 23px;
+    }
+
+  }
+
+}

@@ -1,0 +1,159 @@
+.one-news {
+
+  &__content {
+
+    @media all and (min-width: 768px) {
+      padding-top: 47px;
+    }
+
+    @media all and (min-width: 1169px) {
+      padding-bottom: 150px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      padding-bottom: 100px;
+    }
+
+    @media all and (max-width: 767px) {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+  }
+
+  &__title {
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 14px;
+      margin-left: 21px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -37px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__date {
+    color: $commonColor;
+    @extend %p;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 14px;
+      margin-left: 21px;
+    }
+
+  }
+
+  &__text {
+    color: #ffffff;
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 21px;
+    }
+
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 22px;
+  }
+
+  &__slider {
+    height: 500px;
+    margin-right: auto;
+    margin-bottom: 45px !important;
+    margin-left: auto;
+
+    * {
+      outline: none;
+    }
+
+    .slick-list {
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .slick-track {
+      height: 100%;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      margin-right: auto;
+      margin-left: auto;
+
+      &:hover {
+        cursor: zoom-in;
+      }
+
+    }
+
+    .slick-arrow {
+      z-index: 1;
+    }
+
+    .slick-prev {
+      left: 50px;
+    }
+
+    .slick-next {
+      right: 50px;
+    }
+
+    .slick-prev:before, .slick-next:before {
+      font-size: 40px;
+    }
+
+    .slick-dots li button:before {
+      font-size: 30px;
+    }
+
+    &-item {
+      display: none;
+    }
+
+  }
+
+}

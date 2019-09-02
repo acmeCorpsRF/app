@@ -1,0 +1,103 @@
+.our-mission {
+
+  &__block {
+    background-repeat: no-repeat;
+
+    @media all and (min-width: 768px) {
+      background-image: url("#{$path}/img/pages/main/our_mission.png");
+    }
+
+    @media all and (min-width: 1169px) {
+      background-position: -10px 46px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      background-position: -473px 75px;
+    }
+
+    @media all and (max-width: 767px) {
+      background-image: url("#{$path}/img/pages/main/our_mission_320.png");
+      background-position: -390px -221px;
+    }
+
+  }
+
+  &__content {
+
+    @media all and (min-width: 1169px) {
+      padding-top: 372px;
+      padding-bottom: 340px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      padding-top: 400px;
+      padding-bottom: 284px;
+    }
+
+    @media all and (max-width: 767px) {
+      padding-top: 86px;
+      padding-bottom: 55px;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    color: #ffffff;
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 21px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -37px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__text {
+    display: block;
+    font: {
+      size: 24px;
+      family: $robotoRegular;
+    }
+    line-height: 36px;
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      max-width: 520px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 36px;
+    }
+
+    @media all and (max-width: 767px) {
+      max-width: 240px;
+      margin-bottom: 22px;
+      margin-left: 23px;
+    }
+
+  }
+
+}

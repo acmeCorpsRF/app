@@ -1,0 +1,303 @@
+.already-have {
+
+  &__content {
+    z-index: 1;
+    background-color: #26292d;
+
+    @media all and (min-width: 768px) {
+      padding-top: 75px;
+      background-image: url('#{$path}/img/icons/pages/main/profits.png');
+      background-repeat: no-repeat;
+      background-position-y: 54px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-top: -130px;
+      margin-bottom: -241px;
+      padding-bottom: 59px;
+      background-position-x: 996px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-top: -205px;
+      margin-bottom: -251px;
+      padding-bottom: 54px;
+      background-position-x: 644px;
+    }
+
+    @media all and (max-width: 767px) {
+      padding-top: 35px;
+      padding-bottom: 27px;
+    }
+
+  }
+
+  &__title {
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 69px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 660px;
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 10px;
+      margin-left: 21px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -43px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__text {
+
+    @media all and (min-width: 1169px) {
+      margin-bottom: 17px;
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 630px;
+      margin-bottom: 21px;
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 22px;
+      margin-left: 23px;
+    }
+
+  }
+
+  &__form {
+
+    @media all and (min-width: 1169px) {
+      margin-left: 72px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 43px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 23px;
+    }
+
+    .webform-form {
+      position: relative;
+
+      &-label {
+        position: relative;
+        padding-top: 30px;
+        color: #ffffff;
+
+        @media all and (min-width: 768px) {
+          float: left;
+          width: 277px;
+        }
+
+        @media all and (min-width: 1169px) {
+          margin-top: 4px;
+          margin-bottom: 23px;
+          margin-right: 24px;
+        }
+
+        @media all and (max-width: 1168px) and (min-width: 768px) {
+          margin-bottom: 27px;
+        }
+
+        @media all and (max-width: 1168px) and (min-width: 1053px) {
+
+          &:first-child {
+            margin-right: 24px;
+          }
+
+        }
+
+        @media all and (max-width: 1052px) and (min-width: 768px) {
+
+          &:first-child {
+            margin-right: 14px;
+          }
+
+        }
+
+        @media all and (max-width: 767px) {
+
+          &:first-child {
+            margin-bottom: 19px;
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 27px;
+          }
+
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font: {
+            size: 14px;
+            family: $robotoRegular;
+          }
+          line-height: 30px;
+          color: #585c63;
+        }
+
+        &:first-child::before {
+          content: 'Введите Ваше имя';
+        }
+
+        &:nth-child(2)::before {
+          content: 'Введите Ваш телефон';
+        }
+
+        .form-control {
+          position: relative;
+          width: 100%;
+          height: 63px;
+          padding: 11px 12px 11px 19px;
+          color: #000000;
+          background-color: #f8f8f8;
+          border: 1px solid #eaeaea;
+          @extend %p;
+
+          &::-moz-placeholder {
+            color: #d7d7d7;
+          }
+
+          &:-moz-placeholder {
+            color: #d7d7d7;
+          }
+
+          &::-webkit-input-placeholder {
+            color: #d7d7d7;
+          }
+
+          &:-ms-input-placeholder {
+            color: #d7d7d7;
+          }
+
+          &::-ms-input-placeholder {
+            color: #d7d7d7;
+          }
+
+          &::placeholder {
+            color: #d7d7d7;
+          }
+
+        }
+
+        .control-label {
+          display: none;
+        }
+
+      }
+
+      &-agreement {
+        display: block;
+        padding-left: 33px;
+        font: {
+          size: 14px;
+          family: $robotoRegular;
+        }
+        line-height: 18px;
+        color: #ffffff;
+
+        @media all and (min-width: 1169px) {
+          clear: left;
+        }
+
+      }
+
+      &-checkbox {
+        position: absolute;
+        left: 0;
+        width: 17px;
+        height: 17px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding-left: 2px;
+          background-position: center;
+          background-size: 9px;
+          background-repeat: no-repeat;
+          background-color: #26292d;
+          border: 1px solid #eaeaea;
+          z-index: 1;
+        }
+
+        &:checked {
+
+          &:after {
+            background-image: url("#{$path}/img/icons/correct_symbol.png");
+          }
+
+        }
+
+      }
+
+      &-link {
+        color: $commonColor;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+      }
+
+      .btn {
+        width: 277px;
+        @extend %button-default;
+        @extend %btn-type-submit;
+
+        @media all and (min-width: 1169px) {
+          float: left;
+          margin-top: 34px;
+        }
+
+        @media all and (max-width: 1168px) and (min-width: 768px) {
+          clear: left;
+        }
+
+        @media all and (max-width: 1168px) {
+          margin-bottom: 23px;
+        }
+
+        &::after {
+          right: 25px;
+        }
+
+      }
+
+    }
+
+  }
+
+}

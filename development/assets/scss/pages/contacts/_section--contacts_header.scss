@@ -1,0 +1,81 @@
+.contacts-header {
+
+  &__block {
+    background-image: url("#{$path}/img/pages/contacts/contacts_bg.png");
+    background-repeat: no-repeat;
+
+    @media all and (min-width: 1169px) {
+      background-position-x: -9px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      background-position-x: -247px;
+    }
+
+    @media all and (max-width: 767px) {
+      background-position-x: -390px;
+    }
+
+  }
+
+  &__content {
+
+    @media all and (min-width: 768px) {
+      margin-bottom: -322px;
+    }
+
+    @media all and (min-width: 1169px) {
+      padding-top: 202px;
+      padding-bottom: 524px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      padding-top: 116px;
+      padding-bottom: 449px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: -438px;
+      padding-top: 99px;
+      padding-bottom: 486px;
+    }
+
+  }
+
+  &__title {
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 69px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 21px;
+      font: {
+        size: 46px;
+      }
+      line-height: 46px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -43px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+}

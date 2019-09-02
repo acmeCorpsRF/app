@@ -1,0 +1,148 @@
+@import "normalize/variables.scss";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+}
+
+[class*="__content"]:not([class="popup__content"]) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media all and (min-width: 1169px) {
+    max-width: 1169px;
+  }
+
+  @media all and (max-width: 1453px) and (min-width: 1169px) {
+    padding-left: 142px;
+  }
+
+  @media all and (max-width: 1168px) and (min-width: 768px) {
+    max-width: 768px;
+    padding-right: 15px;
+  }
+
+  @media all and (max-width: 1168px) and (min-width: 1053px) {
+    padding-left: 15px;
+  }
+
+  @media all and (max-width: 1052px) and (min-width: 768px) {
+    padding-left: 142px;
+  }
+
+  @media all and (max-width: 767px) {
+    max-width: 320px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+}
+
+h1, h2, h3 {
+  position: relative;
+  font: {
+    family: $gilroyExtraBold;
+  }
+
+  &:not([class="popup__title"]) {
+    display: inline-block;
+  }
+
+  main &::before {
+    position: absolute;
+    width: 5px;
+    background-color: $commonColor;
+  }
+
+}
+
+h1 {
+  color: #ffffff;
+
+  @media all and (min-width: 768px) {
+    font: {
+      size: 73px;
+    }
+    line-height: 80px;
+  }
+
+  &::before {
+    content: '';
+
+    @media all and (min-width: 768px) {
+      top: 14px;
+      height: 51px;
+    }
+
+    @media all and (max-width: 767px) {
+      top: 7px;
+      height: 32px;
+    }
+
+  }
+
+}
+
+h2 {
+  font: {
+    size: 30px;
+  }
+  line-height: 36px;
+
+  &:not([class*="thanks-page"]):not([class*="error"])::before {
+    content: '';
+    height: 22px;
+
+    @media all and (min-width: 768px) {
+      top: 6px;
+    }
+
+    @media all and (max-width: 767px) {
+      top: 7px;
+    }
+
+  }
+
+}
+
+p:not([class="footer__text-paragraph"]) {
+  font: {
+    size: 17px;
+    family: $robotoRegular;
+  }
+  line-height: 22px;
+}
+
+.common-color {
+  color: $commonColor;
+}
+
+[data-image="popup-image"] {
+  cursor: zoom-in;
+}
+
+.edit-translation {
+  width: 30px;
+  height: 20px;
+  display: block;
+  font: {
+    weight: 100;
+    size: 18px;
+    family: sans-serif;
+  }
+  color: #000000;
+  line-height: initial;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid;
+  text-align: center;
+
+  &:hover {
+    background-color: #FFFF00;
+    cursor: pointer;
+  }
+
+}

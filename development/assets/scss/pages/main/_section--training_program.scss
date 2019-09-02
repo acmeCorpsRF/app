@@ -1,0 +1,217 @@
+.training-program {
+
+  &__content {
+    padding-bottom: 27px;
+
+    @media all and (min-width: 1169px) {
+      padding-top: 85px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      padding-top: 74px;
+    }
+
+    @media all and (max-width: 767px) {
+      padding-top: 91px;
+    }
+
+  }
+
+  &__title {
+    color: #ffffff;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media all and (min-width: 1169px) {
+      margin-left: 63px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 34px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-bottom: 14px;
+      margin-left: 21px;
+    }
+
+    &::before {
+
+      @media all and (min-width: 768px) {
+        left: -37px;
+      }
+
+      @media all and (max-width: 767px) {
+        left: -19px;
+      }
+
+    }
+
+  }
+
+  &__text {
+
+    @media all and (min-width: 1169px) {
+      margin-bottom: 64px;
+      margin-left: 66px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      max-width: 495px;
+      margin-bottom: 42px;
+      margin-left: 38px;
+    }
+
+    @media all and (max-width: 767px) {
+      max-width: 217px;
+      margin-bottom: 31px;
+      margin-left: 22px;
+    }
+
+  }
+
+  &__subtitle {
+    display: inline-block;
+    font: {
+      size: 24px;
+      family: $robotoRegular;
+    }
+    line-height: 30px;
+    color: #ffffff;
+
+    @media all and (min-width: 1169px) {
+      margin-bottom: 32px;
+      margin-left: 67px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-bottom: 32px;
+      margin-left: 38px;
+    }
+
+    @media all and (max-width: 767px) {
+      max-width: 210px;
+      margin-bottom: 20px;
+      margin-left: 22px;
+    }
+
+    br {
+
+      @media all and (min-width: 768px) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  &__blocks {
+
+    @media all and (min-width: 1169px) {
+      margin-left: 70px;
+    }
+
+    @media all and (max-width: 1168px) and (min-width: 768px) {
+      margin-left: 41px;
+    }
+
+    @media all and (max-width: 767px) {
+      margin-left: 24px;
+    }
+
+    &::after {
+
+      @media all and (min-width: 768px) {
+        content: '';
+        display: block;
+        clear: left;
+      }
+
+    }
+
+    &-item {
+      position: relative;
+      width: 261px;
+      height: 130px;
+      padding-top: 40px;
+      padding-right: 10px;
+      padding-left: 19px;
+      background-color: #ffffff;
+      @extend %p;
+
+      @media all and (min-width: 768px) {
+        float: left;
+
+      }
+
+      @media all and (min-width: 1454px) {
+
+        &:not(:nth-child(4n + 4)) {
+          margin-right: 13px;
+        }
+
+        &:nth-child(-n + 8) {
+          margin-bottom: 11px;
+        }
+
+      }
+
+      @media all and (max-width: 1453px) and (min-width: 1169px) {
+
+        &:not(:nth-child(3n + 3)) {
+          margin-right: 13px;
+        }
+
+        &:nth-child(-n + 9) {
+          margin-bottom: 11px;
+        }
+
+      }
+
+      @media all and (max-width: 1168px) and (min-width: 768px) {
+
+        &:nth-child(odd) {
+          margin-right: 13px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 11px;
+        }
+
+      }
+
+      @media all and (max-width: 767px) {
+
+        &:not(:last-child) {
+          margin-bottom: 11px;
+        }
+
+      }
+
+      &::before {
+        position: absolute;
+        top: 17px;
+        left: 18px;
+        font: {
+          size: 14px;
+          family: $robotoRegular;
+        }
+        line-height: 22px;
+        color: $commonColor;
+      }
+
+      @for $c from 1 through 11 {
+
+        &:nth-child(#{$c})::before {
+          content: '#{$c} занятие';
+        }
+
+      }
+
+    }
+
+  }
+
+}
