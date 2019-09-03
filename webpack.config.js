@@ -1,19 +1,22 @@
 'use strict';
-const fs = require('fs')
+// const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const PATHS = {
     pages: path.resolve(__dirname, 'development/pages'),
     entries: path.resolve(__dirname, 'development/assets/js/pages'),
     public: path.resolve(__dirname, 'www/public')
-}
-const PAGES_DIR = PATHS.pages;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'));
+};
+const plugins = [];
+// const PAGES_DIR = PATHS.pages;
+// const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'));
 
 module.exports = {
     context: path.resolve(__dirname, 'development'),
@@ -24,13 +27,10 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'www'),
-        // filename: 'public/js/[name].[chunkhash].js',
-        filename: 'public/js/[name].[hash].js',
+        filename: 'public/js/[name].[chunkhash].js',
     },
     watch: NODE_ENV === 'development',
-    devtool: NODE_ENV == 'development' ? 'cheap-module-source-map' : false,
-    // devtool: NODE_ENV == 'development' ? 'cheap-module-eval-source-map' : false,
-    // devtool: NODE_ENV == 'development' ? 'cheap-module-inline-source-map' : false,
+    devtool: NODE_ENV == 'development' ? 'cheap-module-eval-source-map' : false,
     devServer: {
         overlay: true,
         contentBase: path.resolve(__dirname, 'www')
@@ -92,6 +92,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['./public/css/*', './public/js/*'],
+        }),
         new webpack.DefinePlugin({
             NODE_ENV: NODE_ENV
         }),
@@ -111,8 +114,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            // filename: 'public/css/styles.[contenthash].css',
-            filename: 'public/css/styles.[hash].css',
+            filename: 'public/css/styles.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
             template: 'pages/index.html',
@@ -133,8 +135,10 @@ module.exports = {
         //     chunks: ['vendors', 'styles']
         // })),
         new webpack.SourceMapDevToolPlugin({
-            filename: NODE_ENV == 'development' ? 'public/js/[name].js.map' : false
+            filename: 'public/js/[name].js.map',
+            exclude: ['vendors.js']
         }),
+        new WebpackMd5Hash(),
         new ProgressBarPlugin()
     ]
 

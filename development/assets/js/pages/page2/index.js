@@ -1,6 +1,4 @@
 import '../../../scss/styles.scss';
-// import '../../../scss/pages/personal_data/styles.scss';
-// import '../../../scss/pages/privacy_policy/styles.scss';
 
 import $ from 'jQuery';
 
