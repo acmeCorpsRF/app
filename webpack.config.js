@@ -88,7 +88,13 @@ module.exports = {
                     }
 
                 ]
-            }
+            },
+            {
+                test: /\.pug$/i,
+                use: {
+                    loader: 'pug-loader'
+                }
+            },
         ]
     },
     plugins: [
@@ -117,14 +123,14 @@ module.exports = {
             filename: 'public/css/styles.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
-            template: 'pages/index.html',
-            filename: 'index.html',
+            template: 'pug/pages/main.pug',
+            filename: 'index.pug',
             inject: false,
             chunks: ['vendors', 'main']
         }),
         new HtmlWebpackPlugin({
-            template: 'pages/page2.html',
-            filename: 'page2.html',
+            template: 'pug/pages/page2.pug',
+            filename: 'page2.pug',
             inject: false,
             chunks: ['vendors', 'page2']
         }),
@@ -136,7 +142,8 @@ module.exports = {
         // })),
         new webpack.SourceMapDevToolPlugin({
             filename: 'public/js/[name].js.map',
-            exclude: ['vendors.js']
+            exclude: ['vendors.js'],
+            append: NODE_ENV == 'development' ? '/*# sourceMappingURL=[url]*/' : false
         }),
         new WebpackMd5Hash(),
         new ProgressBarPlugin()
